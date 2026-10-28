@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Prototipo visual navegable de un aula Moodle ACC360 para Matemática de 10.º EGB." />
+  <title>ACC360 · Prototipo Moodle</title>
+  <link rel="stylesheet" href="course.css" />
+</head>
+<body><div style="background:#eef4fb;border-bottom:1px solid #dce6f3;padding:9px 24px;font:600 13px system-ui;color:#49617e"><a href="index.html" style="color:#165fd4;text-decoration:none">Página Principal</a> &nbsp;›&nbsp; <a href="mis-cursos.html" style="color:#165fd4;text-decoration:none">Mis cursos</a> &nbsp;›&nbsp; Factorización algebraica con ACC360</div>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <button class="hamburger" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <div class="brand-mark">A</div>
+      <div class="brand-copy"><strong>ACC360</strong><span>Matemática · 10.º EGB</span></div><a href="mis-cursos.html" style="margin-left:12px;color:#dbeafe;font:700 12px system-ui;text-decoration:none">← Mis cursos</a>
+    </div>
+    <div class="top-title"><span class="prototype-pill">PROTOTIPO MOODLE</span><span>Tecnología invisible, aprendizaje visible</span></div>
+    <div class="user-tools"><button class="icon-btn" aria-label="Notificaciones">🔔</button><button class="icon-btn" aria-label="Mensajes">💬</button><button class="user-btn"><span class="avatar">ES</span><span class="user-text">Estudiante demo<small>Vista estudiante</small></span>⌄</button></div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Navegación del curso">
+      <nav>
+        <a class="nav-item active" href="#inicio"><span>⌂</span>Inicio del curso</a>
+        <a class="nav-item" href="#pacie"><span>◉</span>Bloque PACIE / Cero</a>
+        <div class="nav-label">Bloques académicos</div>
+        <a class="nav-item sub" href="#tema1"><span class="dot t1"></span><b>Tema 1</b><small>Factor común</small></a>
+        <a class="nav-item sub" href="#tema2"><span class="dot t2"></span><b>Tema 2</b><small>Diferencia de cuadrados</small></a>
+        <a class="nav-item sub" href="#tema3"><span class="dot t3"></span><b>Tema 3</b><small>Trinomio cuadrado perfecto</small></a>
+        <a class="nav-item" href="#cierre"><span>⚑</span>Cierre de la ruta</a>
+        <div class="nav-sep"></div>
+        <a class="nav-item" href="#calificaciones"><span>▦</span>Calificaciones</a>
+        <a class="nav-item" href="#ayuda"><span>?</span>Ayuda</a>
+      </nav>
+      <div class="sidebar-card">
+        <small>Progreso del curso</small>
+        <strong id="sideProgressText">0%</strong>
+        <div class="progress"><span id="sideProgressBar" style="width:0%"></span></div>
+        <p>El progreso mostrado es demostrativo y se calcula con actividades marcadas como realizadas.</p>
+      </div>
+    </aside>
+
+    <main id="main" class="content">
+      <section id="inicio" class="course-hero">
+        <div class="hero-copy">
+          <div class="eyebrow">CURSO</div>
+          <h1>Factorización algebraica con ACC360</h1>
+          <p class="course-meta">Matemática · 10.º EGB · MPmTIC + Flipped Classroom + PACIE + ACC360</p>
+          <p>Ruta guiada para reconocer, aplicar y comprobar estrategias de factorización mediante recursos visuales, actividades colaborativas y evaluación formativa integrada.</p>
+          <div class="hero-actions"><a class="btn primary" href="#tema1">Continuar aprendizaje</a><button class="btn secondary" data-open="guide">Ver guía del curso</button></div>
+        </div>
+
+        <div class="hero-side-stack">
+          <section class="factor-lab" aria-labelledby="labTitle">
+            <div class="lab-head">
+              <div>
+                <small>LABORATORIO ACC360</small>
+                <h2 id="labTitle">Laboratorio de factorización</h2>
+              </div>
+              <span class="lab-chip">Explora · Construye · Comprueba</span>
+            </div>
+
+            <div class="lab-tabs" role="tablist" aria-label="Temas del laboratorio">
+              <button class="lab-tab active" role="tab" aria-selected="true" data-lab="common">Factor común</button>
+              <button class="lab-tab" role="tab" aria-selected="false" data-lab="squares">Diferencia de cuadrados</button>
+              <button class="lab-tab" role="tab" aria-selected="false" data-lab="tcp">Trinomio cuadrado perfecto</button>
+            </div>
+
+            <div class="lab-stage" id="labStage">
+              <div class="lab-equation" id="labEquation">6x² + 9x = <strong>3x(2x + 3)</strong></div>
+              <div class="lab-visual" id="labVisual" aria-live="polite">
+                <svg viewBox="0 0 520 230" role="img" aria-label="Modelo de área para factor común">
+                  <text x="255" y="24" text-anchor="middle" class="svg-title">Factor común = lado compartido</text>
+                  <text x="210" y="54" text-anchor="middle" class="svg-label">2x</text>
+                  <text x="375" y="54" text-anchor="middle" class="svg-label">3</text>
+                  <text x="77" y="143" text-anchor="middle" class="svg-label">3x</text>
+                  <rect x="105" y="70" width="210" height="135" rx="4" class="tile tile-a"/>
+                  <rect x="315" y="70" width="130" height="135" rx="4" class="tile tile-b"/>
+                  <text x="210" y="147" text-anchor="middle" class="svg-value">6x²</text>
+                  <text x="380" y="147" text-anchor="middle" class="svg-value">9x</text>
+                </svg>
+              </div>
+              <p class="lab-note" id="labNote">El lado común representa el factor común. Extrae 3x y comprueba multiplicando: 3x(2x + 3).</p>
+              <div class="lab-foot">
+                <div class="lab-steps" aria-label="Secuencia del laboratorio">
+                  <span><b>1</b> Identifica</span>
+                  <span><b>2</b> Factoriza</span>
+                  <span><b>3</b> Comprueba</span>
+                </div>
+                <a class="lab-topic-link" id="labTopicLink" href="#tema1">Ir al tema en Moodle →</a>
+              </div>
+            </div>
+          </section>
+
+          <div class="hero-panel">
+            <small>Progreso general</small>
+            <div class="hero-progress-row"><strong id="heroProgressText">0%</strong><span id="heroCompletedText">0 de 24 actividades</span></div>
+            <div class="progress big"><span id="heroProgressBar" style="width:0%"></span></div>
+            <div class="next-step"><span>Siguiente recomendado</span><b id="nextStep">Revisar la bienvenida del Bloque PACIE</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-strip" aria-label="Resumen del curso">
+        <div><span>◫</span><small>Modalidad</small><b>B-learning / apoyo Moodle</b></div>
+        <div><span>◷</span><small>Ruta</small><b>3 temas + cierre integrador</b></div>
+        <div><span>⚙</span><small>Metodología</small><b>ACC + PACIE + Flipped Classroom</b></div>
+        <div><span>▥</span><small>Evaluación</small><b>Integrada en Consolidación</b></div>
+      </section>
+
+      <section id="pacie" class="section-card pacie-block">
+        <div class="section-head">
+          <div><div class="kicker">BLOQUE PACIE / CERO</div><h2>Orientación del aula</h2><p>Información, comunicación e interacción para iniciar la experiencia con claridad.</p></div>
+          <span class="status-chip neutral">Siempre disponible</span>
+        </div>
+        <div class="pacie-grid">
+          <article class="pacie-card info"><div class="pacie-icon">i</div><h3>Información</h3><ul><li><button data-open="welcome">Bienvenida al curso</button></li><li><button data-open="objectives">Objetivos de aprendizaje</button></li><li><button data-open="guide">Guía para iniciar</button></li><li><button data-open="methodology">Metodología ACC360</button></li><li><button data-open="rubric">Rúbricas y criterios</button></li></ul></article>
+          <article class="pacie-card comm"><div class="pacie-icon">↗</div><h3>Comunicación</h3><ul><li><button data-open="announcements">Avisos del docente</button></li><li><button data-open="calendar">Cronograma</button></li><li><button data-open="session">Clase sincrónica</button></li><li><button data-open="news">Novedades</button></li></ul></article>
+          <article class="pacie-card interaction"><div class="pacie-icon">◎</div><h3>Interacción</h3><ul><li><button data-open="forum">Foro de consultas</button></li><li><button data-open="social">Foro social</button></li><li><button data-open="glossary">Glosario matemático</button></li><li><button data-open="netiquette">Netiqueta</button></li></ul></article>
+        </div>
+      </section>
+
+      <div class="route-header">
+        <div><div class="kicker">BLOQUES ACADÉMICOS</div><h2>Ruta de aprendizaje</h2><p>Cada tema mantiene la misma secuencia para que el estudiante se concentre en aprender, no en descifrar la navegación.</p></div>
+        <div class="legend"><span class="lg expo">Exposición</span><span class="lg rebote">Rebote</span><span class="lg construccion">Construcción</span><span class="lg consolida">Consolidación</span></div>
+      </div>
+
+      <section id="tema1" class="topic-section open" data-topic="1">
+        <button class="topic-header" aria-expanded="true">
+          <div class="topic-index t1bg">01</div>
+          <div class="topic-title"><small>TEMA 1</small><h2>Factor común</h2><p>Reconoce y extrae factores comunes en expresiones algebraicas.</p></div>
+          <div class="topic-progress"><strong class="topicPct">0%</strong><div class="progress"><span></span></div><small class="topicCount">0/8 completadas</small></div>
+          <div class="chev">⌃</div>
+        </button>
+        <div class="topic-body">
+          <div class="phase activation expo-phase">
+            <div class="phase-head"><span class="phase-badge expo">ACTIVACIÓN · EXPOSICIÓN</span><div><b>Explora antes de la clase</b><small>Recursos principales y anticipación conceptual.</small></div></div>
+            <div class="activity-list">
+              <article class="activity" data-activity="t1a1"><button class="complete" aria-label="Marcar realizada">○</button><div class="activity-icon video">▶</div><div class="activity-copy"><small>RECURSO · 8 min</small><h3>Microvideo: ¿Qué significa factorizar?</h3><p>Activa la propiedad distributiva y reconoce factores en expresiones sencillas.</p><div class="tags"><span>Moodle Página</span><span>Video</span></div></div><button class="open-resource" data-open="t1a1">Abrir</button></article>
+              <article class="activity" data-activity="t1a2"><button class="complete" aria-label="Marcar realizada">○</button><div class="activity-icon challenge">◆</div><div class="activity-copy"><small>ACTIVIDAD ASINCRÓNICA · 5 min</small><h3>Reto ACC360: encuentra el elemento común</h3><p>Identifica el factor que se repite en varios términos antes de formalizar el procedimiento.</p><div class="tags"><span>H5P</span><span>Interacción</span></div></div><button class="open-resource" data-open="t1a2">Abrir</button></article>
+            </div>
+          </div>
+          <div class="phase activation rebote-phase">
+            <div class="phase-head"><span class="phase-badge rebote">ACTIVACIÓN · REBOTE</span><div><b>Comprueba lo que sabes</b><small>Autoevaluación y organización de conocimientos previos.</small></div></div>
+            <div class="activity-list">
+              <article class="activity" data-activity="t1a3"><button class="complete" aria-label="Marcar realizada">○</button><div class="activity-icon quiz">?</div><div class="activity-copy"><small>DIAGNÓSTICO · 7 min</small><h3>Prerrequisitos: MCD, términos y distributiva</h3><p>Retroalimentación inmediata; no aporta nota al tema.</p><div class="tags"><span>Moodle Quiz</span><span>Diagnóstico</span></div></div><button class="open-resource" data-open="t1a3">Intentar</button></article>
+              <article class="activity" data-activity="t1a4"><button class="complete" aria-label="Marcar realizada">○</button><div class="activity-icon map">▦</div><div class="activity-copy"><small>ACTIVIDAD INDIVIDUAL · 12 min</small><h3>Organizador: término, coeficiente, factor y factor común</h3><p>Organiza conceptos clave y deja evidencia breve en Moodle.</p><div class="tags"><span>Tarea</span><span>Organizador gráfico</span></div></div><button class="open-resource" data-open="t1a4">Abrir</button></article>
+            </div>
+          </div>
+          <div class="phase construction-phase">
+            <div class="phase-head"><span class="phase-badge construccion">CONSTRUCCIÓN · PACIE</span><div><b>Aplica, representa y argumenta</b><small>Trabajo colaborativo y acompañamiento docente.</small></div></div>
+            <div class="activity-list">
+              <article class="activity" data-activity="t1a5"><button class="complete" aria-label="Marcar realizada">○</button><div class="activity-icon group">👥</div><div class="activity-copy"><small>ACTIVIDAD COLABORATIVA · 20 min</small><h3>Taller: factorización progresiva</h3><p>Resuelve expresiones en equipo, compara procedimientos y argumenta decisiones.</p><div class="tags"><span>Foro/Taller</span><span>Colaboración</span></div></div><button class="open-resource" data-open="t1a5">Participar</button></article>
+              <article class="activity" data-activity="t1a6"><button class="complete" aria-label="Marcar realizada">○</button><div class="activity-icon sim">∑</div><div class="activity-copy"><small>SIMULACIÓN · 15 min</small><h3>Modela con fichas algebraicas</h3><p>Representa la extracción de factor común con GeoGebra o Polypad.</p><div class="tags"><span>GeoGebra / Polypad</span><span>Simulación</span></div></div><button class="open-resource" data-open="t1a6">Explorar</button></article>
+            </div>
+          </div>
+          <div class="phase consolidation-phase">
+            <div class="phase-head"><span class="phase-badge consolida">CONSOLIDACIÓN · COMPROBACIÓN</span><div><b>Demuestra y reflexiona</b><small>La evaluación principal del tema se integra aquí.</small></div></div>
+            <div class="activity-list">
+              <article class="activity graded" data-activity="t1a7"><button class="complete" aria-label="Marcar realizada">○</button><div class="activity-icon task">✓</div><div class="activity-copy"><small>EVIDENCIA DEL TEMA · 20 min</small><h3>Tarea: factoriza y comprueba</h3><p>Resuelve ejercicios y verifica cada respuesta aplicando nuevamente la distributiva.</p><div class="tags"><span>Tarea Moodle</span><span>Evaluación</span><span>Rúbrica</span></div></div><button class="open-resource" data-open="t1a7">Entregar</button></article>
+              <article class="activity graded" data-activity="t1a8"><button class="complete" aria-label="Marcar realizada">○</button><div class="activity-icon quiz">10</div><div class="activity-copy"><small>QUIZ FORMATIVO · 15 min</small><h3>Comprobación: factor común</h3><p>10 preguntas con retroalimentación y una reflexión metacognitiva final.</p><div class="tags"><span>Moodle Quiz</span><span>Feedback</span></div></div><button class="open-resource" data-open="t1a8">Intentar</button></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tema2" class="topic-section" data-topic="2">
+        <button class="topic-header" aria-expanded="false">
+          <div class="topic-index t2bg">02</div>
+          <div class="topic-title"><small>TEMA 2</small><h2>Diferencia de cuadrados</h2><p>Identifica cuadrados perfectos y factoriza mediante binomios conjugados.</p></div>
+          <div class="topic-progress"><strong class="topicPct">0%</strong><div class="progress"><span></span></div><small class="topicCount">0/8 completadas</small></div>
+          <div class="chev">⌄</div>
+        </button>
+        <div class="topic-body">
+          <div class="phase activation expo-phase"><div class="phase-head"><span class="phase-badge expo">ACTIVACIÓN · EXPOSICIÓN</span><div><b>Reconoce el patrón</b><small>Cuadrados perfectos, conjugados y representación geométrica.</small></div></div><div class="activity-list">
+            <article class="activity" data-activity="t2a1"><button class="complete">○</button><div class="activity-icon video">▶</div><div class="activity-copy"><small>RECURSO · 8 min</small><h3>Microvideo: cuadrados perfectos y conjugados</h3><p>Diferencia una resta de cuadrados de otras expresiones.</p><div class="tags"><span>Página</span><span>Video</span></div></div><button class="open-resource" data-open="t2a1">Abrir</button></article>
+            <article class="activity" data-activity="t2a2"><button class="complete">○</button><div class="activity-icon sim">□</div><div class="activity-copy"><small>EXPLORACIÓN · 10 min</small><h3>Área grande menos área pequeña</h3><p>Interpreta geométricamente la diferencia de cuadrados.</p><div class="tags"><span>GeoGebra</span><span>Visualización</span></div></div><button class="open-resource" data-open="t2a2">Explorar</button></article>
+          </div></div>
+          <div class="phase activation rebote-phase"><div class="phase-head"><span class="phase-badge rebote">ACTIVACIÓN · REBOTE</span><div><b>Clasifica y justifica</b><small>Diagnóstico breve y selección del caso.</small></div></div><div class="activity-list">
+            <article class="activity" data-activity="t2a3"><button class="complete">○</button><div class="activity-icon quiz">?</div><div class="activity-copy"><small>DIAGNÓSTICO · 7 min</small><h3>¿Es diferencia de cuadrados?</h3><p>Clasifica expresiones y recibe feedback inmediato.</p><div class="tags"><span>H5P</span><span>Autoevaluación</span></div></div><button class="open-resource" data-open="t2a3">Intentar</button></article>
+            <article class="activity" data-activity="t2a4"><button class="complete">○</button><div class="activity-icon map">▦</div><div class="activity-copy"><small>ACTIVIDAD INDIVIDUAL · 10 min</small><h3>Guía rápida de condiciones</h3><p>Construye una ficha de decisión: cuadrados perfectos, resta y conjugados.</p><div class="tags"><span>Tarea</span><span>Organizador</span></div></div><button class="open-resource" data-open="t2a4">Abrir</button></article>
+          </div></div>
+          <div class="phase construction-phase"><div class="phase-head"><span class="phase-badge construccion">CONSTRUCCIÓN · PACIE</span><div><b>Factoriza y explica</b><small>Representación, colaboración y análisis de errores.</small></div></div><div class="activity-list">
+            <article class="activity" data-activity="t2a5"><button class="complete">○</button><div class="activity-icon group">👥</div><div class="activity-copy"><small>COLABORATIVA · 20 min</small><h3>Binomios conjugados en equipo</h3><p>Factoriza casos progresivos y contrasta estrategias.</p><div class="tags"><span>Taller</span><span>Colaboración</span></div></div><button class="open-resource" data-open="t2a5">Participar</button></article>
+            <article class="activity" data-activity="t2a6"><button class="complete">○</button><div class="activity-icon sim">∑</div><div class="activity-copy"><small>COMPROBACIÓN GUIADA · 15 min</small><h3>Verifica con producto de conjugados</h3><p>Contrasta la factorización multiplicando los binomios.</p><div class="tags"><span>GeoGebra CAS</span><span>Supervisado</span></div></div><button class="open-resource" data-open="t2a6">Verificar</button></article>
+          </div></div>
+          <div class="phase consolidation-phase"><div class="phase-head"><span class="phase-badge consolida">CONSOLIDACIÓN · COMPROBACIÓN</span><div><b>Demuestra y transfiere</b><small>Evidencia y quiz integrados en el tema.</small></div></div><div class="activity-list">
+            <article class="activity graded" data-activity="t2a7"><button class="complete">○</button><div class="activity-icon task">✓</div><div class="activity-copy"><small>EVIDENCIA DEL TEMA · 20 min</small><h3>Tarea: reconoce, factoriza y comprueba</h3><p>Incluye casos directos y un ejercicio con factor común previo.</p><div class="tags"><span>Tarea Moodle</span><span>Evaluación</span></div></div><button class="open-resource" data-open="t2a7">Entregar</button></article>
+            <article class="activity graded" data-activity="t2a8"><button class="complete">○</button><div class="activity-icon quiz">10</div><div class="activity-copy"><small>QUIZ FORMATIVO · 15 min</small><h3>Comprobación: diferencia de cuadrados</h3><p>10 preguntas y reflexión de selección estratégica.</p><div class="tags"><span>Moodle Quiz</span><span>Feedback</span></div></div><button class="open-resource" data-open="t2a8">Intentar</button></article>
+          </div></div>
+        </div>
+      </section>
+
+      <section id="tema3" class="topic-section" data-topic="3">
+        <button class="topic-header" aria-expanded="false">
+          <div class="topic-index t3bg">03</div>
+          <div class="topic-title"><small>TEMA 3</small><h2>Trinomio cuadrado perfecto</h2><p>Reconoce el patrón, verifica el doble producto y factoriza como binomio al cuadrado.</p></div>
+          <div class="topic-progress"><strong class="topicPct">0%</strong><div class="progress"><span></span></div><small class="topicCount">0/8 completadas</small></div>
+          <div class="chev">⌄</div>
+        </button>
+        <div class="topic-body">
+          <div class="phase activation expo-phase"><div class="phase-head"><span class="phase-badge expo">ACTIVACIÓN · EXPOSICIÓN</span><div><b>Observa la estructura</b><small>Cuadrado de binomio, extremos perfectos y término medio.</small></div></div><div class="activity-list">
+            <article class="activity" data-activity="t3a1"><button class="complete">○</button><div class="activity-icon video">▶</div><div class="activity-copy"><small>RECURSO · 8 min</small><h3>Microvideo: del binomio al trinomio</h3><p>Conecta producto notable y factorización.</p><div class="tags"><span>Página</span><span>Video</span></div></div><button class="open-resource" data-open="t3a1">Abrir</button></article>
+            <article class="activity" data-activity="t3a2"><button class="complete">○</button><div class="activity-icon sim">□</div><div class="activity-copy"><small>VISUALIZACIÓN · 10 min</small><h3>Construye un cuadrado completo</h3><p>Representa visualmente a² ± 2ab + b².</p><div class="tags"><span>Polypad</span><span>GeoGebra</span></div></div><button class="open-resource" data-open="t3a2">Explorar</button></article>
+          </div></div>
+          <div class="phase activation rebote-phase"><div class="phase-head"><span class="phase-badge rebote">ACTIVACIÓN · REBOTE</span><div><b>Verifica las condiciones</b><small>Raíces de extremos y doble producto.</small></div></div><div class="activity-list">
+            <article class="activity" data-activity="t3a3"><button class="complete">○</button><div class="activity-icon quiz">?</div><div class="activity-copy"><small>DIAGNÓSTICO · 7 min</small><h3>TCP o no TCP</h3><p>Clasifica expresiones justificando la condición que cumplen o incumplen.</p><div class="tags"><span>H5P</span><span>Diagnóstico</span></div></div><button class="open-resource" data-open="t3a3">Intentar</button></article>
+            <article class="activity" data-activity="t3a4"><button class="complete">○</button><div class="activity-icon map">▦</div><div class="activity-copy"><small>ACTIVIDAD INDIVIDUAL · 10 min</small><h3>Ficha de reconocimiento del patrón</h3><p>Organiza raíces, doble producto y signo del binomio.</p><div class="tags"><span>Tarea</span><span>Organizador</span></div></div><button class="open-resource" data-open="t3a4">Abrir</button></article>
+          </div></div>
+          <div class="phase construction-phase"><div class="phase-head"><span class="phase-badge construccion">CONSTRUCCIÓN · PACIE</span><div><b>Construye, factoriza y verifica</b><small>Aplicación guiada y análisis de errores.</small></div></div><div class="activity-list">
+            <article class="activity" data-activity="t3a5"><button class="complete">○</button><div class="activity-icon group">👥</div><div class="activity-copy"><small>COLABORATIVA · 20 min</small><h3>Factorización guiada en equipos</h3><p>Casos con término medio positivo y negativo.</p><div class="tags"><span>Taller</span><span>Colaboración</span></div></div><button class="open-resource" data-open="t3a5">Participar</button></article>
+            <article class="activity" data-activity="t3a6"><button class="complete">○</button><div class="activity-icon sim">∑</div><div class="activity-copy"><small>VERIFICACIÓN · 15 min</small><h3>Desarrolla el binomio y compara</h3><p>Verifica que la forma factorizada reproduce el trinomio original.</p><div class="tags"><span>GeoGebra CAS</span><span>Supervisado</span></div></div><button class="open-resource" data-open="t3a6">Verificar</button></article>
+          </div></div>
+          <div class="phase consolidation-phase"><div class="phase-head"><span class="phase-badge consolida">CONSOLIDACIÓN · COMPROBACIÓN</span><div><b>Demuestra y crea</b><small>Evidencia, transferencia y metacognición.</small></div></div><div class="activity-list">
+            <article class="activity graded" data-activity="t3a7"><button class="complete">○</button><div class="activity-icon task">✓</div><div class="activity-copy"><small>EVIDENCIA DEL TEMA · 20 min</small><h3>Tarea: reconoce, factoriza y genera un TCP</h3><p>Incluye comprobación algebraica y explicación breve del criterio usado.</p><div class="tags"><span>Tarea Moodle</span><span>Evaluación</span></div></div><button class="open-resource" data-open="t3a7">Entregar</button></article>
+            <article class="activity graded" data-activity="t3a8"><button class="complete">○</button><div class="activity-icon quiz">10</div><div class="activity-copy"><small>QUIZ FORMATIVO · 15 min</small><h3>Comprobación: trinomio cuadrado perfecto</h3><p>10 preguntas con feedback y reflexión final del tema.</p><div class="tags"><span>Moodle Quiz</span><span>Feedback</span></div></div><button class="open-resource" data-open="t3a8">Intentar</button></article>
+          </div></div>
+        </div>
+      </section>
+
+      <section id="cierre" class="section-card close-section">
+        <div class="section-head"><div><div class="kicker">CIERRE DE LA RUTA ACC360</div><h2>Integra y transfiere</h2><p>No es un cuarto tema. Su función es integrar, transferir y reflexionar sobre los tres casos trabajados.</p></div><span class="status-chip">Cierre formativo</span></div>
+        <div class="closing-grid">
+          <article><span>01</span><h3>Síntesis visual</h3><p>Comparador de criterios para decidir qué estrategia de factorización utilizar.</p><button data-open="synthesis">Ver síntesis</button></article>
+          <article><span>02</span><h3>Reto integrador</h3><p>Primero identifica el caso; después factoriza; finalmente comprueba.</p><button data-open="integrative">Abrir reto</button></article>
+          <article><span>03</span><h3>Autoevaluación global</h3><p>Valora tu autonomía para elegir y justificar una estrategia.</p><button data-open="selfeval">Autoevaluarme</button></article>
+          <article><span>04</span><h3>Reflexión final</h3><p>Explica qué pistas utilizas para decidir cómo factorizar.</p><button data-open="reflection">Reflexionar</button></article>
+        </div>
+      </section>
+
+      <section id="calificaciones" class="section-card grade-section">
+        <div class="section-head"><div><div class="kicker">LIBRO DE CALIFICACIONES · DEMO</div><h2>Evaluación por tema</h2><p>La evaluación principal se integra en Consolidación. No se asignan ponderaciones definitivas en este prototipo.</p></div><span class="status-chip neutral">Solo demostración</span></div>
+        <div class="grade-table-wrap"><table><thead><tr><th>Categoría</th><th>Evidencia</th><th>Estado</th><th>Calificación</th></tr></thead><tbody>
+          <tr><td>Factor común</td><td>Tarea + Quiz</td><td><span class="table-status pending">Pendiente</span></td><td>—</td></tr>
+          <tr><td>Diferencia de cuadrados</td><td>Tarea + Quiz</td><td><span class="table-status pending">Pendiente</span></td><td>—</td></tr>
+          <tr><td>Trinomio cuadrado perfecto</td><td>Tarea + Quiz</td><td><span class="table-status pending">Pendiente</span></td><td>—</td></tr>
+          <tr><td>Cierre ACC360</td><td>Reto integrador / reflexión</td><td><span class="table-status formative">Formativo</span></td><td>—</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <section id="ayuda" class="section-card help-section">
+        <div class="section-head"><div><div class="kicker">AYUDA</div><h2>Cómo leer este prototipo</h2></div></div>
+        <div class="help-grid"><details open><summary>¿Es un Moodle real?</summary><p>No. Es un prototipo navegable que representa cómo debería organizarse y verse el curso antes de configurarlo en el LMS institucional.</p></details><details><summary>¿Dónde está la evaluación?</summary><p>En la fase de Consolidación de cada tema, articulada con PACIE: Comprobación. El cierre integra y reflexiona, pero no reemplaza esas evidencias.</p></details><details><summary>¿Qué significan los colores?</summary><p>Amarillo: Exposición. Naranja: Rebote. Azul: Construcción. Verde: Consolidación/Comprobación.</p></details><details><summary>¿Qué pasa al marcar una actividad?</summary><p>El prototipo actualiza el progreso localmente en este navegador. No guarda datos académicos reales.</p></details></div>
+      </section>
+
+      <footer><strong>ACC360</strong><span>Prototipo de aula Moodle · Matemática 10.º EGB</span><span>Moodle será la fuente oficial de evidencias, evaluación y progreso académico.</span></footer>
+    </main>
+  </div>
+
+  <dialog id="modal">
+    <div class="modal-head"><div><small id="modalType">RECURSO</small><h2 id="modalTitle">Título</h2></div><button id="closeModal" aria-label="Cerrar">×</button></div>
+    <div id="modalBody" class="modal-body"></div>
+    <div class="modal-actions"><button class="btn secondary" id="closeModal2">Cerrar</button><button class="btn primary" id="demoAction">Acción demostrativa</button></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="course.js"></script>
+</body>
+</html>
